@@ -1,48 +1,23 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    background-color: #009B97;
+    background-image: linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image: -webkit-linear-gradient(top, #009B97 0%, #E4E4E4 70%);
+    background-image: -ms-linear-gradient(top, #009B97 0%, #E4E4E4 70%);
+    background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, #009B97), color-stop(0.70, #E4E4E4) );
+    background-attachment: fixed;
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
 }
 
 /* Portrait layout (default) */
@@ -50,7 +25,7 @@ body {
     background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
-    top:50%;
+    top:40%;
     height:50px;                   /* text area height */
     width:225px;                   /* text area width */
     text-align:center;
@@ -62,9 +37,7 @@ body {
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+        background-position:left center; /* offset vertical: half of image height */
                                       /* offset horizontal: half of image width and text area width */
     }
 }
@@ -112,4 +85,83 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+
+form li{
+    border: 2px ridge rgba(187, 185, 189, 0.11);
+    border-radius: 0.3em;
+    -webkit-border-radius:0.3em;
+    -moz-border-radius:0.3em;
+    -o-border-radius:0.3em;
+    list-style:none;
+    margin-bottom:12px;
+    background:#F0EEF0;
+
+}
+input[type="text"], input[type="password"] {
+    font-family: 'Droid Sans', sans-serif;
+    width: 100%;
+    padding: 0.5em 0em 0.5em 1em;
+    color: #009B97;
+    font-size: 20px;
+    outline: none;
+    background: none;
+    border: none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus{ 
+    outline: none;
+    border-color: #009B97;
+    box-shadow: 0 0 10px #009B97;
+}
+input[type="text"]:hover, input[type="password"]:hover{
+    color:#009fB97;
+}
+.login > input[type="text"]:hover, .login > input[type="password"]:hover{
+    color:#009fB97;
+}
+.submit h4 a{
+    float:left;
+    font-size: 16px;
+    color: #999;
+    font-weight: 400;
+    font-family: 'Droid Sans', sans-serif;
+    margin-top: 15px;
+    margin-left: 21px;
+}
+.submit h4 a:hover{
+    color:#009B97;
+}
+/*************************/
+.submit{
+    padding-top:3em;
+}
+input[type="submit"] {
+    float: left;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 900;
+    outline: none;
+    font-family: 'Raleway', sans-serif;
+    padding: 12px 0px;
+    width: 100%;
+    font-size: 18px;
+    background:#009B97;
+    border:2px solid #009B97;
+    border-radius: 0.5em;
+    -webkit-border-radius:0.5em;
+    -moz-border-radius:0.5em;
+    -o-border-radius:0.5em;
+}
+input[type="submit"]:hover {
+    background: #fff;
+    color:#009B97;
+    border:2px solid #009B97;
+}
+.logout{
+    padding: 3em 2em;
+    background: #F2F2F2;
+    font-size: 25pt;
+    color: #c5c5c5;
 }
